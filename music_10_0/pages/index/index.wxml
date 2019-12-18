@@ -1,0 +1,26 @@
+<!--pages/index/index.wxml-->
+<!--搜索开始-->
+<view class="seach">
+  <icon type="search" class="search-img" size="13" color="#405f80" />
+  <input type="text" placeholder='海阔天空' placeholder-class='placeholder' bindfocus='focusInput'
+  bindconfirm='inputCommit' value="{{inputValue}}"></input>
+  <image src="/images/icon/wx_app_xx.png" class="xx-img" catchtap='onCloseSearch'></image>
+</view>
+
+<!-- 搜索结束 -->
+
+<!-- 分类区域 -->
+<view wx:for="{{ type }}" class='wrap' wx:key="index" bindtap='tap' data-id='{{index}}'  wx:if="{{showContainer}}">
+  <text class='index'>{{index+1}}.</text>
+  <text class='text'> {{ item[index] }} </text>
+</view>
+
+<!-- 搜索的结果显示区域 -->
+<view class="search-panel" wx:if="{{showSerch}}">
+  <view wx:for='{{searchSongs}}' class='wrap1' wx:key='id' bindtap='gotoSong' data-id='{{item.id}}' data-index="{{index}}">
+    <view class='introduce'>
+      <view>{{item.name}}</view>
+      <view>{{item.artists[0].name}}</view>
+    </view>
+</view>
+</view>

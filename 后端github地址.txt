@@ -1,0 +1,7 @@
+https://github.com/Binaryify/NeteaseCloudMusicApi
+
+排行榜
+
+歌单详情
+
+获取歌词

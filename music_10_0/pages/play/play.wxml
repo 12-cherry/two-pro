@@ -1,0 +1,21 @@
+ <wxs module="foo">
+ module.exports = {
+    toStr: function(n){
+      n = Math.floor(n)
+      return n<10 ? "0"+n : ""+n
+    }
+ }
+ </wxs>
+
+<image class='img' src="{{song.al.picUrl}}"  ></image>
+<slider bindchanging="changing" bindchange="change" value="{{current}}" min="0" max="{{duration}}" step='1' block-size="20" ></slider>
+<view class='wrap'>
+  <text class='now'>{{foo.toStr( current/60 )}}:{{foo.toStr( current%60 )}}</text>
+  <text class='duration'>{{foo.toStr( duration/60 )}}:{{foo.toStr( duration%60 )}}</text>
+</view>
+<view style="color:#fff" class="btnList">
+  <button catchtap="previousSong">上一曲</button>
+  <button bindtap='tap'>暂停</button>
+  <button catchtap="nextSong">下一曲</button>
+</view>
+
